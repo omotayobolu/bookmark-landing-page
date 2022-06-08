@@ -71,6 +71,7 @@ a {
   border-radius: 5px;
   box-shadow: 5px 8px 5px #ccc;
   font-family: "Rubik", sans-serif;
+  font-size: 0.9rem;
 }
 
 .container {
@@ -87,6 +88,28 @@ a {
 .logo {
   display: flex;
   justify-items: flex-start;
+}
+
+.toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.toggle.active {
+  background: url(./images/icon-close.svg);
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
 }
 
 .navbar-nav {
@@ -164,11 +187,12 @@ a {
   height: 100px;
   background-repeat: no-repeat;
   background-position: bottom bottom; */
-  margin-right: -150px;
 }
 
 .bookmark-img img {
   margin-top: -30px;
+  margin-right: -100px;
+  max-width: 100%;
 }
 
 /* Features */
@@ -212,8 +236,8 @@ a {
 .tabs .tab-indicator {
   position: relative;
   width: calc(100% / 3);
-  height: 3px;
-  background-color: var(--soft-red);
+  height: 2px;
+  background-color: var(--grayish-blue);
   text-align: center;
 }
 
@@ -230,6 +254,11 @@ a {
   overflow: hidden;
   display: flex;
   flex-direction: row;
+}
+
+.tab-body > div img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .tabs .tab-body > div > div {
@@ -304,6 +333,7 @@ a {
 .questions {
   display: grid;
   place-items: center;
+  text-align: center;
 }
 
 .questions p {
@@ -336,6 +366,7 @@ a {
 /* contact-us */
 #contact-us {
   background-color: var(--soft-blue);
+  margin-left: -10px;
 }
 
 .contact {
@@ -375,11 +406,13 @@ a {
   color: #fff;
   background-color: var(--soft-red);
   box-shadow: none;
+  border-radius: 5px;
 }
 
 /* final */
 .final {
   background-color: var(--very-dark-blue);
+  margin-left: -10px;
 }
 
 .final .logo {
@@ -414,4 +447,130 @@ a {
 
 .social {
   margin-right: 40px;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 375px) and (max-width: 768px) {
+  .container {
+    margin: 0 5%;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .bookmark {
+    grid-template-columns: 1fr;
+  }
+
+  .bookmark-content {
+    text-align: center;
+  }
+
+  .bookmark-content h1 {
+    font-size: 2rem;
+  }
+  /* .bookmark-img {
+    margin-top: -15rem;
+  } */
+
+  .features-intro {
+    padding: 0;
+  }
+
+  .tab-header {
+    flex-direction: column;
+  }
+
+  .tabs .tab-header > div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tabs .tab-body > div {
+    flex-direction: column;
+  }
+
+  .tabs .tab-body > div > div {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .tab-button {
+    display: none;
+  }
+
+  .extension-content {
+    margin-top: 15rem;
+    padding: 0;
+  }
+
+  .boxes {
+    margin-top: 5rem;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .questions h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact {
+    padding: 50px 0;
+  }
+
+  .contact-header-2 {
+    font-size: 1.5rem;
+    max-width: 100%;
+    font-weight: 400;
+  }
+
+  .enter {
+    flex-direction: column;
+  }
+
+  .email {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .bottom .navbar-nav {
+    flex-direction: column;
+    margin-right: 0;
+  }
+
+  .bottom .navbar-nav .nav-item {
+    margin: 10px 0;
+  }
+
+  .socials {
+    margin-top: 20px;
+  }
+
+  .modal.active {
+    display: block;
+  }
 }
