@@ -86,6 +86,8 @@ a {
 }
 
 .logo {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-items: flex-start;
 }
@@ -99,7 +101,7 @@ a {
   height: 30px;
   background-image: url(./images/icon-hamburger.svg);
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 30px;
   background-position: center;
   z-index: 2;
   cursor: pointer;
@@ -108,7 +110,7 @@ a {
 .toggle.active {
   background: url(./images/icon-close.svg);
   background-repeat: no-repeat;
-  background-size: 40px;
+  background-size: 30px;
   background-position: center;
 }
 
@@ -181,14 +183,6 @@ a {
   border: 2px solid #333;
 }
 
-.bookmark-img {
-  /* background-color: var(--soft-blue);
-  width: 200px;
-  height: 100px;
-  background-repeat: no-repeat;
-  background-position: bottom bottom; */
-}
-
 .bookmark-img img {
   margin-top: -30px;
   margin-right: -100px;
@@ -215,7 +209,9 @@ a {
   margin-top: 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 100%;
+  border-bottom: 1px solid var(--grayish-blue);
 }
 
 .tabs .tab-header h4:hover {
@@ -223,7 +219,6 @@ a {
 }
 
 .tabs .tab-header > div {
-  width: calc(100% / 3);
   text-align: center;
   cursor: pointer;
   color: var(--grayish-blue);
@@ -231,14 +226,6 @@ a {
 
 .tabs .tab-header > div.active {
   color: var(--very-dark-blue);
-}
-
-.tabs .tab-indicator {
-  position: relative;
-  width: calc(100% / 3);
-  height: 2px;
-  background-color: var(--grayish-blue);
-  text-align: center;
 }
 
 .tabs .tab-body {
@@ -343,9 +330,16 @@ a {
 .faq {
   max-width: 700px;
   margin-top: 2rem;
-  padding-bottom: 1rem;
-  border-top: 1px solid var(--grayish-blue);
+  border-bottom: 2px solid var(--grayish-blue);
   cursor: pointer;
+}
+
+.faq.active .answer {
+  max-height: 300px;
+}
+
+.faq.active img {
+  transform: rotate(180deg);
 }
 
 .question {
@@ -353,14 +347,13 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-
 .question h3:hover {
   color: var(--soft-red);
 }
 
-.answer p {
-  margin-top: -30px;
-  padding-top: 1rem;
+.answer {
+  max-height: 0;
+  overflow: hidden;
 }
 
 /* contact-us */
@@ -375,6 +368,7 @@ a {
   place-items: center;
   color: #fff;
   text-align: center;
+  max-width: 100%;
 }
 
 .contact-header-1 {
@@ -385,7 +379,7 @@ a {
 .contact-header-2 {
   color: #fff;
   font-size: 2rem;
-  width: 400px;
+  width: 500px;
 }
 
 .enter {
@@ -398,7 +392,7 @@ a {
   border-radius: 5px;
   padding: 10px 20px;
   margin-right: 20px;
-  width: 300px;
+  width: 350px;
   font-size: 1rem;
 }
 
@@ -416,7 +410,7 @@ a {
 }
 
 .final .logo {
-  filter: brightness(0.5) invert(1);
+  filter: brightness(0.9) invert(1);
   margin-top: -1px;
 }
 
@@ -457,6 +451,49 @@ a {
   left: 0;
   height: 100%;
   width: 100%;
+  opacity: 0.9;
+}
+
+.modal-box {
+  position: relative;
+  height: 100vh;
+  background-color: var(--very-dark-blue);
+}
+
+.modal-body .navbar-nav {
+  padding-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body .navbar-nav .nav-item {
+  padding: 30px 0;
+  border-top: 1px solid white;
+  width: 80%;
+  text-align: center;
+}
+
+.modal-body .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  font-weight: 400;
+}
+
+.modal-body .navbar-nav .nav-link.login-m {
+  border: 3px solid white;
+  border-radius: 5px;
+  padding: 10px 100px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.modal-body .socials {
+  display: flex;
+  justify-content: center;
+  padding-top: 20rem;
 }
 
 @media (min-width: 375px) and (max-width: 768px) {
@@ -464,7 +501,7 @@ a {
     margin: 0 5%;
   }
 
-  .navbar-nav {
+  .heading .navbar-nav {
     display: none;
   }
 
@@ -482,26 +519,28 @@ a {
 
   .bookmark-content {
     text-align: center;
+    margin-top: 20rem;
   }
 
   .bookmark-content h1 {
     font-size: 2rem;
   }
-  /* .bookmark-img {
-    margin-top: -15rem;
-  } */
+  .bookmark-img {
+    margin-top: -35rem;
+  }
 
   .features-intro {
     padding: 0;
   }
 
-  .tab-header {
+  .tabs .tab-header {
     flex-direction: column;
   }
 
   .tabs .tab-header > div {
     width: 100%;
     max-width: 100%;
+    border-top: 1px solid var(--grayish-blue);
   }
 
   .tabs .tab-body > div {
@@ -528,6 +567,10 @@ a {
     gap: 10px;
   }
 
+  .box.box-three {
+    margin-top: 50px;
+  }
+
   .questions h2 {
     font-size: 1.7rem;
   }
@@ -538,8 +581,8 @@ a {
 
   .contact-header-2 {
     font-size: 1.5rem;
-    max-width: 100%;
     font-weight: 400;
+    width: 300px;
   }
 
   .enter {
@@ -568,6 +611,10 @@ a {
 
   .socials {
     margin-top: 20px;
+  }
+
+  .modal .container {
+    margin: -20px 0;
   }
 
   .modal.active {
