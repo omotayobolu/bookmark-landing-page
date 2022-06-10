@@ -31,7 +31,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--very-dark-blue);
 }
 
@@ -218,14 +218,17 @@ a {
   color: var(--soft-red);
 }
 
-.tabs .tab-header > div {
+.tabs .tab-header .tab-head {
   text-align: center;
   cursor: pointer;
   color: var(--grayish-blue);
 }
 
-.tabs .tab-header > div.active {
+.tabs .tab-header .tab-head.active {
   color: var(--very-dark-blue);
+  border-bottom: 3px solid var(--soft-red);
+  width: calc(100% / 4);
+  text-align: center;
 }
 
 .tabs .tab-body {
@@ -325,17 +328,18 @@ a {
 
 .questions p {
   text-align: center;
+  max-width: 500px;
 }
 
 .faq {
   max-width: 700px;
-  margin-top: 2rem;
-  border-bottom: 2px solid var(--grayish-blue);
+  border-bottom: 1px solid var(--grayish-blue);
   cursor: pointer;
 }
 
 .faq.active .answer {
   max-height: 300px;
+  margin-top: -20px;
 }
 
 .faq.active img {
@@ -347,6 +351,7 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
 .question h3:hover {
   color: var(--soft-red);
 }
@@ -537,10 +542,14 @@ a {
     flex-direction: column;
   }
 
-  .tabs .tab-header > div {
+  .tabs .tab-header .tab-head {
     width: 100%;
     max-width: 100%;
     border-top: 1px solid var(--grayish-blue);
+  }
+
+  .tabs .tab-header .tab-head.active {
+    width: 100%;
   }
 
   .tabs .tab-body > div {
