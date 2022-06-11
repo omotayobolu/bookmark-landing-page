@@ -1,11 +1,3 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 :root {
   --soft-blue: hsl(231, 69%, 60%);
   --soft-red: hsl(0, 94%, 66%);
@@ -17,6 +9,7 @@
   border: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -189,6 +182,17 @@ a {
   max-width: 100%;
 }
 
+.right-blue-bg {
+  position: absolute;
+  background-color: var(--sof-blue);
+  width: 80%;
+  height: 75%;
+  top: 25%;
+  right: -10rem;
+  border-bottom-left-radius: 35%;
+  z-index: -1;
+}
+
 /* Features */
 #features {
   margin-top: 10rem;
@@ -203,6 +207,7 @@ a {
 
 .tabs {
   height: 600px;
+  position: relative;
 }
 
 .tabs .tab-header {
@@ -236,28 +241,40 @@ a {
   padding-top: 70px;
 }
 
-.tabs .tab-body > div {
+.tabs .tab-body .tab-content {
   position: absolute;
-  opacity: 0;
   transform: scale(0.9);
   transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms;
   overflow: hidden;
+  display: none;
+}
+
+.tab-body .tab-content img {
+  max-width: 100%;
+  z-index: 2;
+}
+
+.tabs .tab-body .tab-content > div {
+  padding: 50px 0 0 100px;
+}
+
+.tabs .tab-body .tab-content.active {
+  transform: scale(1);
+  display: block;
   display: flex;
   flex-direction: row;
 }
 
-.tab-body > div img {
-  width: 100%;
-  max-width: 100%;
-}
-
-.tabs .tab-body > div > div {
-  padding: 50px 0 0 100px;
-}
-
-.tabs .tab-body > div.active {
-  opacity: 1;
-  transform: scale(1);
+.left-blue-bg {
+  position: absolute;
+  background-color: var(--soft-blue);
+  width: 45%;
+  height: 65%;
+  top: 26%;
+  left: 0;
+  border-bottom-right-radius: 35%;
+  border-top-right-radius: 40%;
+  z-index: -1;
 }
 
 .tab-button {
@@ -344,6 +361,7 @@ a {
 
 .faq.active img {
   transform: rotate(180deg);
+  color: var(--soft-red);
 }
 
 .question {
@@ -365,6 +383,7 @@ a {
 #contact-us {
   background-color: var(--soft-blue);
   margin-left: -10px;
+  margin-right: -8px;
 }
 
 .contact {
@@ -408,10 +427,18 @@ a {
   border-radius: 5px;
 }
 
+.contact-me:hover {
+  color: var(--soft-red);
+  background-color: #fff;
+  border: 2px solid var(--soft-red);
+  font-weight: 500;
+}
+
 /* final */
 .final {
   background-color: var(--very-dark-blue);
   margin-left: -10px;
+  margin-right: -8px;
 }
 
 .final .logo {
@@ -501,6 +528,14 @@ a {
   padding-top: 20rem;
 }
 
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
 @media (min-width: 375px) and (max-width: 768px) {
   .container {
     margin: 0 5%;
@@ -552,11 +587,11 @@ a {
     width: 100%;
   }
 
-  .tabs .tab-body > div {
+  .tabs .tab-body .tab-content.active {
     flex-direction: column;
   }
 
-  .tabs .tab-body > div > div {
+  .tabs .tab-body > .tab-content > div {
     padding: 50px 0;
     text-align: center;
   }

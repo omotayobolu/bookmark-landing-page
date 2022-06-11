@@ -86,17 +86,17 @@
         <div class="tabs">
           <div class="tab-header">
             <div class="tab-head active">
-              <h4>Simple Bookmarking</h4>
+              <h4 id="tab1">Simple Bookmarking</h4>
             </div>
             <div class="tab-head">
-              <h4>Speedy Searching</h4>
+              <h4 id="tab2">Speedy Searching</h4>
             </div>
             <div class="tab-head">
-              <h4>Easy Sharing</h4>
+              <h4 id="tab3">Easy Sharing</h4>
             </div>
           </div>
           <div class="tab-body">
-            <div class="active">
+            <div class="tab-content active">
               <img src="./images/illustration-features-tab-1.svg" alt="" />
               <div>
                 <h2>Bookmark in one click</h2>
@@ -108,7 +108,7 @@
                 <button class="btn tab-button">More Info</button>
               </div>
             </div>
-            <div>
+            <div class="tab-content">
               <img src="./images/illustration-features-tab-2.svg" alt="" />
               <div>
                 <h2>Intelligent search</h2>
@@ -120,7 +120,7 @@
                 <button class="btn tab-button">More Info</button>
               </div>
             </div>
-            <div>
+            <div class="tab-content">
               <img src="./images/illustration-features-tab-2.svg" alt="" />
               <div>
                 <h2>Share your bookmarks</h2>
@@ -252,15 +252,15 @@
           <h2 class="contact-header-2">
             Stay up-to-date with what we're doing
           </h2>
-          <div class="enter">
+          <form id="form" class="enter" action="#">
             <input
               class="email"
               type="email"
               placeholder="Enter your email address"
               required
             />
-            <button class="btn contact-me">Contact Us</button>
-          </div>
+            <button type="submit" class="btn contact-me">Contact Us</button>
+          </form>
         </div>
       </div>
     </section>
@@ -324,6 +324,6 @@
       </p>
     </footer>
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
