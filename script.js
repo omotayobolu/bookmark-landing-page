@@ -30,9 +30,3 @@ tabHead.forEach((head) => {
     head.classList.toggle("active");
   });
 });
-
-// for (let i = 0; i < tabHead.length; i++) {
-//   tabHead.addEventListener("click", () => {
-//     tabHead.classList.toggle("active");
-//   });
-// }
