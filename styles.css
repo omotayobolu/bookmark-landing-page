@@ -80,7 +80,7 @@ a {
 
 .logo {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   justify-items: flex-start;
 }
@@ -182,17 +182,6 @@ a {
   max-width: 100%;
 }
 
-.right-blue-bg {
-  position: absolute;
-  background-color: var(--sof-blue);
-  width: 80%;
-  height: 75%;
-  top: 25%;
-  right: -10rem;
-  border-bottom-left-radius: 35%;
-  z-index: -1;
-}
-
 /* Features */
 #features {
   margin-top: 10rem;
@@ -217,6 +206,7 @@ a {
   justify-content: space-around;
   width: 100%;
   border-bottom: 1px solid var(--grayish-blue);
+  border-width: 80%;
 }
 
 .tabs .tab-header h4:hover {
@@ -263,18 +253,6 @@ a {
   display: block;
   display: flex;
   flex-direction: row;
-}
-
-.left-blue-bg {
-  position: absolute;
-  background-color: var(--soft-blue);
-  width: 45%;
-  height: 65%;
-  top: 26%;
-  left: 0;
-  border-bottom-right-radius: 35%;
-  border-top-right-radius: 40%;
-  z-index: -1;
 }
 
 .tab-button {
@@ -441,8 +419,8 @@ a {
   margin-right: -8px;
 }
 
-.final .logo {
-  filter: brightness(0.9) invert(1);
+.final .logo.bottom {
+  filter: brightness(1) invert(150%) contrast(150%) grayscale(150%);
   margin-top: -1px;
 }
 
@@ -536,7 +514,7 @@ a {
   color: hsl(228, 45%, 44%);
 }
 
-@media (min-width: 375px) and (max-width: 768px) {
+@media (min-width: 360px) and (max-width: 768px) {
   .container {
     margin: 0 5%;
   }
@@ -547,6 +525,7 @@ a {
 
   .logo {
     width: 200px;
+    z-index: 1;
   }
 
   .toggle {
@@ -559,14 +538,24 @@ a {
 
   .bookmark-content {
     text-align: center;
-    margin-top: 20rem;
+    margin-top: 15rem;
   }
 
   .bookmark-content h1 {
     font-size: 2rem;
   }
   .bookmark-img {
-    margin-top: -35rem;
+    margin-top: -30rem;
+  }
+
+  .btn-bookmark {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #features {
+    margin-top: 5rem;
   }
 
   .features-intro {
@@ -663,5 +652,16 @@ a {
 
   .modal.active {
     display: block;
+  }
+
+  .logo-modal {
+    width: 200px;
+    margin: 0 7%;
+    padding-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 2;
+    filter: brightness(1) invert(150%) contrast(150%) grayscale(150%);
   }
 }

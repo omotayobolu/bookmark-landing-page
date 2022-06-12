@@ -1,9 +1,8 @@
 const toggle = document.querySelector(".toggle");
 const modal = document.querySelector(".modal");
 const faqs = document.querySelectorAll(".faq");
-const tab1 = document.querySelector("#tab1");
-const tab2 = document.querySelector("#tab2");
-const tab3 = document.querySelector("#tab3");
+const tabContent = document.querySelectorAll(".tab-content");
+const tabHead = document.querySelectorAll(".tab-head");
 
 toggle.addEventListener("click", () => {
   toggle.classList.toggle("active");
@@ -25,3 +24,15 @@ faqs.forEach((faq) => {
     faq.classList.toggle("active");
   });
 });
+
+tabHead.forEach((head) => {
+  head.addEventListener("click", () => {
+    head.classList.toggle("active");
+  });
+});
+
+// for (let i = 0; i < tabHead.length; i++) {
+//   tabHead.addEventListener("click", () => {
+//     tabHead.classList.toggle("active");
+//   });
+// }
