@@ -19,15 +19,14 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-tabs.addEventListener("click", function (e) {
+tabs.addEventListener("click", (e) => {
   const id = e.target.dataset.id;
   if (id) {
-    tabHead.forEach(function (head) {
+    tabHead.forEach((head) => {
       head.classList.remove("active");
     });
     e.target.classList.add("active");
-    // hide other contents
-    tabContent.forEach(function (content) {
+    tabContent.forEach((content) => {
       content.classList.remove("active");
     });
     const element = document.getElementById(id);

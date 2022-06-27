@@ -179,7 +179,6 @@ a {
 
 .bookmark-img img {
   margin-top: -30px;
-  margin-right: -100px;
   max-width: 100%;
 }
 
@@ -391,6 +390,16 @@ a {
   margin-right: 20px;
   width: 350px;
   font-size: 1rem;
+}
+
+.email:required:invalid {
+  outline: none;
+  border: none;
+  border: 2px solid var(--soft-red);
+  background-image: url(./images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-origin: content-box;
 }
 
 .contact-me {
