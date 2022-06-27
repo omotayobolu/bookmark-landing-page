@@ -85,18 +85,18 @@
         </div>
         <div class="tabs">
           <div class="tab-header">
-            <div class="tab-head active">
-              <h4 id="tab1">Simple Bookmarking</h4>
-            </div>
-            <div class="tab-head">
-              <h4 id="tab2">Speedy Searching</h4>
-            </div>
-            <div class="tab-head">
-              <h4 id="tab3">Easy Sharing</h4>
-            </div>
+            <button class="tab-head active" data-id="tab1">
+              Simple Bookmarking
+            </button>
+            <button class="tab-head" data-id="tab2">Speedy Searching</button>
+            <button class="tab-head" data-id="tab3">Easy Sharing</button>
           </div>
           <div class="tab-body">
-            <div class="tab-content active" data-aos="fade-right">
+            <div
+              class="tab-content active"
+              data-id="tab1"
+              data-aos="fade-right"
+            >
               <img src="./images/illustration-features-tab-1.svg" alt="" />
               <div data-aos="fade-left">
                 <h2>Bookmark in one click</h2>
@@ -108,9 +108,9 @@
                 <button class="btn tab-button">More Info</button>
               </div>
             </div>
-            <div class="tab-content">
+            <div class="tab-content" data-id="tab2" data-aos="fade-right">
               <img src="./images/illustration-features-tab-2.svg" alt="" />
-              <div>
+              <div data-aos="fade-left">
                 <h2>Intelligent search</h2>
                 <p>
                   Our powerful search feature will help you find saved sites in
@@ -120,9 +120,9 @@
                 <button class="btn tab-button">More Info</button>
               </div>
             </div>
-            <div class="tab-content">
+            <div class="tab-content" data-id="tab3" data-aos="fade-right">
               <img src="./images/illustration-features-tab-2.svg" alt="" />
-              <div>
+              <div data-aos="fade-left">
                 <h2>Share your bookmarks</h2>
                 <p>
                   Easily share your bookmarks and collections with others.
