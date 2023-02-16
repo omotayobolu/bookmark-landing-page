@@ -4,6 +4,10 @@ const faqs = document.querySelectorAll(".faq");
 const tabs = document.querySelector(".tabs");
 const tabHead = document.querySelectorAll(".tab-head");
 const tabContent = document.querySelectorAll(".tab-content");
+// const emailInput = document.querySelector(".email");
+const emailError = document.querySelector("#error");
+
+emailError.style.display = "none";
 
 toggle.addEventListener("click", () => {
   toggle.classList.toggle("active");

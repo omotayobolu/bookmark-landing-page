@@ -81,7 +81,7 @@ a {
 
 .logo {
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: flex;
   justify-items: flex-start;
 }
@@ -97,7 +97,7 @@ a {
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
-  z-index: 2;
+  z-index: 10;
   cursor: pointer;
 }
 
@@ -209,6 +209,10 @@ a {
   font-size: 1rem;
   display: block;
   cursor: pointer;
+}
+
+.tab-head:hover {
+  color: hsl(0, 94%, 66%);
 }
 
 .tab-head.active {
@@ -382,6 +386,11 @@ a {
   display: flex;
 }
 
+.enter > div {
+  position: relative;
+  display: flex;
+}
+
 .email {
   border: none;
   outline: none;
@@ -392,14 +401,24 @@ a {
   font-size: 1rem;
 }
 
-.email:required:invalid {
+.email:invalid {
   outline: none;
-  border: none;
   border: 2px solid var(--soft-red);
   background-image: url(./images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: right center;
   background-origin: content-box;
+}
+
+#error {
+  position: absolute;
+  bottom: -20px;
+  padding: 5px;
+  font-size: 0.7rem;
+  background-color: var(--soft-red);
+  width: 350px;
+  font-style: italic;
+  text-align: left;
 }
 
 .contact-me {
@@ -424,7 +443,6 @@ a {
 }
 
 .final .logo.bottom {
-  filter: brightness(1) invert(150%) contrast(150%) grayscale(150%);
   margin-top: -1px;
 }
 
@@ -464,18 +482,18 @@ a {
 
 .modal {
   display: none;
-  position: absolute;
-  z-index: 1;
+  position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   opacity: 0.9;
 }
 
 .modal-box {
+  height: 105vh;
   position: relative;
-  height: 100vh;
   background-color: var(--very-dark-blue);
   animation: modalopen 1s;
 }
@@ -517,13 +535,13 @@ a {
   border-radius: 5px;
   padding: 10px 100px;
   font-weight: 500;
-  margin: 0;
 }
 
 .modal-body .socials {
   display: flex;
   justify-content: center;
-  padding-top: 20rem;
+  align-items: flex-end;
+  margin-top: 10rem;
 }
 
 .attribution {
@@ -678,16 +696,5 @@ a {
 
   .modal.active {
     display: block;
-  }
-
-  .logo-modal {
-    width: 200px;
-    margin: 0 7%;
-    padding-top: 40px;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    z-index: 2;
-    filter: brightness(1) invert(150%) contrast(150%) grayscale(150%);
   }
 }
